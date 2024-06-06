@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super important inbox</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff80bf;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ffccff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ff4da6;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        main p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        main img {
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #ffccff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            color: #ff4da6;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff80bf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .button-container button:hover {
+            background-color: #ff4da6;
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 1.5em;
+            color: #ff4da6;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotateZ(0deg); }
+            100% { transform: translateY(100vh) rotateZ(360deg); }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff80bf;
+            opacity: 0.7;
+            animation: confetti-fall 3s ease-out;
+        }
+
+        .confetti:nth-child(2n) {
+            background-color: #ff4da6;
+        }
+
+        .confetti:nth-child(3n) {
+            background-color: #ffccff;
+        }
+
+        .confetti:nth-child(4n) {
+            background-color: #ffe6f2;
+        }
+
+        .confetti:nth-child(5n) {
+            background-color: #ffb3d9;
+        }
+
+        .confetti:nth-child(6n) {
+            background-color: #ff99cc;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            const messageContainer = document.getElementById('messageContainer');
+
+            yesButton.addEventListener('mouseover', function() {
+                yesButton.innerText = 'No';
+            });
+
+            yesButton.addEventListener('mouseout', function() {
+                yesButton.innerText = 'Yes';
+            });
+
+            yesButton.addEventListener('click', showPopups);
+            noButton.addEventListener('click', showPopups);
+
+            function showPopups() {
+                alert('YOU DONT LOVE ME?');
+
+                const loveMessages = [
+                    "your smile lights up my world.",
+                    "you're so sweet and caring.",
+                    "your love means everything to me.",
+                    "handsome and charming, always.",
+                    "strong and supportive, ur my rock.",
+                    "your humor never fails to make me laugh.",
+                    "intelligent in every way.",
+                    "captivating me with every glance.",
+                    "you make my heart skip a beat.",
+                    "your kindness knows no bounds.",
+                    "loving you is effortless.",
+                    "your presence fills me with joy.",
+                    "I feel safe and secure with you.",
+                    "your strength inspires me.",
+                    "you're the light in my life.",
+                    "your support means everything.",
+                    "funny in the best way possible.",
+                    "your intelligence amazes me.",
+                    "captivating me with your every word.",
+                    "you're simply wonderful in every way."
+                ];
+
+                loveMessages.forEach((message, index) => {
+                    setTimeout(() => {
+                        alert(message);
+                    }, 100 * index);
+                });
+
+                setTimeout(() => {
+                    messageContainer.style.display = 'block';
+                    generateConfetti();
+                }, 2100);
+            }
+
+            function generateConfetti() {
+                for (let i = 0; i < 200; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.classList.add('confetti');
+                        confetti.style.left = `${Math.random() * 100}%`;
+                        document.body.appendChild(confetti);
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 3000);
+                    }, Math.random() * 3000);
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>super important inbox</h1>
+    </header>
+    <main>
+        <p>do you love me?</p>
+        <div class="button-container">
+            <button id="yesButton">yes</button>
+            <button id="noButton">no</button>
+        </div>
+        <div id="messageContainer" class="hidden-message">
+            just kidding :33 i love u so much daniel. have a good day pookie!!
+            <br>
+            <img src="cute-cat.gif" alt="Cute Cat">
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 humyra not doing her work</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>university of notre dame secret portal</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff80bf;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ffccff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ff4da6;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        main p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        main img {
+            margin-top: 20px;
+            width: 100px;
+        }
+
+        footer {
+            background-color: #ffccff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            color: #ff4da6;
+        }
+
+        .input-container {
+            margin-top: 20px;
+        }
+
+        .input-container input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #ff80bf;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .input-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff80bf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .input-container button:hover {
+            background-color: #ff4da6;
+        }
+    </style>
+    <script>
+        function checkName() {
+            var name = document.getElementById('nameInput').value.toLowerCase();
+            if (name === 'daniel') {
+                window.location.href = 'cute.html';
+            } else {
+                alert('sorry, this page is only for Daniel! (use lowercase to type ur name btw.)');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>welcome to top secret page for cool ppl only</h1>
+    </header>
+    <main>
+        <p>
+            enter your name and click submit to unlock your secret special message....
+        </p>
+        <img src="flower.png" alt="Flower">
+        <div class="input-container">
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button onclick="checkName()">Submit</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 humyra not doing her work per usual</p>
+    </footer>
+</body>
+</html>
